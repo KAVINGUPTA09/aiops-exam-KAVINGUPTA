@@ -471,3 +471,115 @@ Wahi line number ya function apne VS Code mein theek karo, wapas commit & push k
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 1: Terminal se Nayi Branch Push Karo (Best Command)
+Ek hi line mein branch switch karke push karne ka sabse clean tareeqa:
+
+Bash
+# Nayi branch banao aur turant uspe shift ho jao
+git checkout -b test-branch
+
+# Code stage aur commit karo
+git add .
+git commit -m "add unit tests and coverage"
+
+# Push karo
+git push origin test-branch
+Step 2: GitHub Browser par Yellow Strip se 1-Click PR Banao
+Yeh manual dropdown select karne se 10 guna fast hai:
+
+Apne browser mein repo ka page open karo aur refresh (F5) karo.
+
+Sabse upar screen par ek Yellow alert bar dikhegi:
+
+test-branch had recent pushes 1 minute ago
+
+Uske theek aage bane green button Compare & pull request par click kar do.
+
+Naye page par bina koi title change kiye seedha neeche Create pull request green button daba do.
+
+Step 3: Result Check Karo (Usi Page Par)
+PR create hote hi aapko Actions tab mein jaane ki bhi zaroorat nahi hai.
+
+Usi Pull Request ke page par thoda neeche scroll karo:
+
+Wahan checks ka box apne aap aa jata hai.
+
+Pehle 🟡 (running) dikhega.
+
+15-20 second mein All checks have passed ke sath 🟢 Green tick lag jayega.
+
+Coverage report ka comment bhi Mona bot usi PR ke neeche automatically post kar degi.
+
+Agar exam mein PR required ho, toh yeh "Yellow Strip wala method" sabse best, fast aur zero-error tareeqa hai!
+
+
+
+
