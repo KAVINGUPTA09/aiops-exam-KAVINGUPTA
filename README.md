@@ -1,10 +1,28 @@
-# AIOps Practical Examination — Continuous Evaluation Lab
+# 🧪 AIOps Practical Examination — Continuous Evaluation Lab
 
-> **Mode:** Local implementation in VS Code | **Evaluation:** Git commit history, file structure & implementation logic
+> **Mode:** Local implementation in VS Code &nbsp;|&nbsp; **Evaluation:** Git commit history, file structure & implementation logic
 
 ---
 
-## Instructions to Candidates
+## 📑 Table of Contents
+
+1. [Instructions to Candidates](#-instructions-to-candidates)
+2. [Task Overview](#-task-overview)
+3. [Repository Structure](#-repository-structure)
+4. [Task 1 — Log Parsing](#-task-1-log-parsing-and-rule-based-anomaly-detection)
+5. [Task 2 — Isolation Forest](#-task-2-unsupervised-anomaly-detection-using-isolation-forest)
+6. [Task 3 — Airflow DAG](#-task-3-telemetry-workflow-automation-using-apache-airflow)
+7. [Task 4 — Kafka Streaming](#-task-4-real-time-event-streaming-with-apache-kafka)
+8. [Submission Checklist](#-submission-checklist)
+9. [Setup & Submission Guide](#-setup--submission-guide)
+10. [Quick Commands (AIOps Lab Exam Project)](#-quick-commands--aiops-lab-exam-project)
+11. [Pytest, Coverage & CI/CD Flow](#-pytest-coverage--cicd-flow)
+12. [GitHub Actions — Result Check](#-github-actions--result-check)
+13. [Branch + Pull Request Flow](#-branch--pull-request-flow)
+
+---
+
+## 📌 Instructions to Candidates
 
 1. This practical exam evaluates your ability to implement **end-to-end AIOps tasks locally** using VS Code.
 2. There are **NO automated online test cases** (e.g., HackerEarth style).
@@ -17,7 +35,7 @@
 
 ---
 
-## Task Overview
+## 🗂️ Task Overview
 
 | Task | Topic | Target File | Commit Message |
 |------|-------|-------------|----------------|
@@ -28,7 +46,7 @@
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 .
@@ -46,7 +64,7 @@
 
 ---
 
-## Task 1: Log Parsing and Rule-Based Anomaly Detection
+## 🔍 Task 1: Log Parsing and Rule-Based Anomaly Detection
 
 **Target File:** `task1_log_parsing/log_analysis.py`
 **Input Data File:** `application.log` (present in repository root)
@@ -71,7 +89,7 @@ Write a Python script that:
 
 ---
 
-## Task 2: Unsupervised Anomaly Detection using Isolation Forest
+## 🌲 Task 2: Unsupervised Anomaly Detection using Isolation Forest
 
 **Target File:** `task2_ml_anomaly/anomaly_detection.py`
 
@@ -85,12 +103,14 @@ response_time = [
     123, 128, 125, 122, 131, 700, 127, 119, 650, 124
 ]
 ```
+
 ```python
 cpu_usage = [
     32, 35, 34, 36, 33, 35, 37, 34, 36, 35,
     34, 33, 36, 35, 34, 92, 35, 33, 95, 34
 ]
 ```
+
 While standard latencies fall between **118 ms and 131 ms**, specific intervals show severe latency degradation.
 
 Write a Python script that:
@@ -110,7 +130,7 @@ Write a Python script that:
 
 ---
 
-## Task 3: Telemetry Workflow Automation using Apache Airflow
+## ⚙️ Task 3: Telemetry Workflow Automation using Apache Airflow
 
 **Target File:** `task3_airflow_pipeline/aiops_dag.py`
 
@@ -122,7 +142,7 @@ Define an automated monitoring DAG in Apache Airflow named **`practical2_aiops_d
 
 | Parameter | Value |
 |-----------|-------|
-|dag id|
+| `dag_id` | `practical2_aiops_dag` |
 | `start_date` | September 14, 2026 |
 | `schedule` | `None` |
 | `catchup` | `False` |
@@ -152,7 +172,7 @@ collect >> process >> detect >> saving
 
 ---
 
-## Task 4: Real-Time Event Streaming with Apache Kafka
+## 📡 Task 4: Real-Time Event Streaming with Apache Kafka
 
 **Target File:** `task4_kafka_stream/kafka_pipeline.py`
 
@@ -177,7 +197,7 @@ Implement real-time metric streaming and threshold monitoring using Kafka:
 
 ---
 
-## Submission Checklist
+## ✅ Submission Checklist
 
 - [ ] Task 1 implemented, executed, and committed
 - [ ] Task 2 implemented, executed, and committed
@@ -186,41 +206,45 @@ Implement real-time metric streaming and threshold monitoring using Kafka:
 - [ ] One atomic commit per task, using the exact commit messages above
 - [ ] All commits pushed to the `main` branch before the deadline
 
-
-
-
+---
 
 ## 🚀 Setup & Submission Guide
 
 Follow these steps to complete and submit the assignment.
 
 ### 1. Fork the Repository
+
 Open the assignment repository in your browser and click the **Fork** button at the top-right corner.
 
 ### 2. Clone to Your Local Machine
+
 Copy your forked repo's URL, then clone it and move into the project folder:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
 cd REPO_NAME
 code .
+```
 
+Then create and activate the virtual environment:
 
+```bash
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
 ### 3. Navigate and Create the Solution File
+
 Go to the task folder and create your solution file:
 
 ```bash
 cd task1_log_parsing
 ```
 
-Create `log_analysis.py` using any editor:
-
+Create `log_analysis.py` using any editor.
 
 ### 4. Run and Verify the Script
+
 Make sure the script runs and produces output without errors:
 
 ```bash
@@ -228,6 +252,7 @@ python log_analysis.py
 ```
 
 ### 5. Commit and Push Your Changes
+
 Stage the file, commit with the required message, and push to your remote repo:
 
 ```bash
@@ -237,10 +262,13 @@ git commit -m "feat: task 1 completed log parsing and error counter"
 git push origin main
 ```
 
----
-
 ✅ **Done!** Your solution is now live on your forked repository.
 
+---
+
+### 🛠️ Full Environment Setup (Step-by-Step, PowerShell)
+
+```powershell
 # 1. Cloned repo ke folder mein jao
 cd REPO_NAME
 
@@ -261,104 +289,117 @@ pip install -r requirements.txt
 
 # (OR) Agar requirements.txt file nahi hai, toh direct packages daalo:
 pip install numpy matplotlib scikit-learn
+```
 
-#all files
+### 📦 Install All Packages
+
+```powershell
 pip install numpy pandas matplotlib seaborn scikit-learn scipy psutil regex requests python-dotenv apache-airflow kafka-python pydantic
+```
 
+### 🔄 Sync & Stage
 
+```bash
 git pull origin main --rebase
 git push origin main
 
 git add .
+```
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#more github commands
-
-# AIOps Lab Exam Project
+## ⚡ Quick Commands — AIOps Lab Exam Project
 
 This repository contains the complete implementation of AIOps practical exam tasks.
 
----
+> 📝 **Note:** Yeh section alternate folder names use karta hai (`task2_anomaly_detection/`, `dags/task3_dag.py`). Apne repo ke actual folder names ke hisaab se paths adjust karo.
 
-## Environment Setup & Commands
-
-Run these commands in your VS Code PowerShell terminal:
+Run these commands in your VS Code PowerShell terminal.
 
 ### 1. Clone & Enter Folder
+
+```bash
 git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
 cd REPO_NAME
 git pull origin main
+```
 
 ### 2. Virtual Environment Setup & Activation
+
+```powershell
 python -m venv venv
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\venv\Scripts\Activate.ps1
+```
 
 ### 3. Install All Packages
+
+```bash
 pip install numpy pandas matplotlib scikit-learn apache-airflow kafka-python
+```
 
----
+### ▶️ Tasks Execution
 
-## Tasks Execution
+**Task 1: Log Parsing**
 
-### Task 1: Log Parsing
+```bash
 python task1_log_parsing/log_analysis.py
+```
 
-### Task 2: Anomaly Detection
+**Task 2: Anomaly Detection**
+
+```bash
 python task2_anomaly_detection/anomaly_detection.py
+```
 
-### Task 3: Airflow DAG Setup
+**Task 3: Airflow DAG Setup**
+
+```bash
 python dags/task3_dag.py
+```
 
----
+### 📤 GitHub Submission Workflow (Using Exact File Paths)
 
-## GitHub Submission Workflow (Using Exact File Paths)
+**Submit Task 1:**
 
-### Submit Task 1:
+```bash
 git add task1_log_parsing/log_analysis.py app.log
 git commit -m "feat: task 1 completed log parsing and error counter"
 git push origin main
+```
 
-### Submit Task 2:
+**Submit Task 2:**
+
+```bash
 git add task2_anomaly_detection/anomaly_detection.py
 git commit -m "feat: task 2 completed isolation forest anomaly detection"
 git push origin main
+```
 
-### Submit Task 3:
+**Submit Task 3:**
+
+```bash
 git add dags/task3_dag.py
 git commit -m "feat: task 3 completed apache airflow dag pipeline"
 git push origin main
+```
+
+### ⚠️ If Push Rejected (Fix)
+
+```bash
+git pull origin main --rebase
+git push origin main
+```
 
 ---
 
-## If Push Rejected (Fix):
-git pull origin main --rebase
-git push origin main
+## 🧫 Pytest, Coverage & CI/CD Flow
 
+### Step 1: Virtual Environment Setup
 
-
-
-
-
-Step 1: Virtual Environment Setup
 Terminal mein jaakar venv banao aur activate karo:
 
-Bash
+```bash
 # 1. Virtual environment create karo
 python -m venv .venv/calculations
 
@@ -366,19 +407,25 @@ python -m venv .venv/calculations
 source .venv/calculations/bin/activate
 
 # (Agar Windows PowerShell par ho to ye chalana: .venv\calculations\Scripts\Activate.ps1)
-Step 2: Dependencies Install Karo
+```
+
+### Step 2: Dependencies Install Karo
+
 Required packages aur coverage tools install karo:
 
-Bash
+```bash
 # Repo ke requirements install karo
 pip install -r requirements.txt
 
 # Pytest aur coverage tools install karo
 pip install pytest coverage pytest-cov
-Step 3: Tests Run Karo aur Coverage Check Karo
+```
+
+### Step 3: Tests Run Karo aur Coverage Check Karo
+
 Unit tests run karke dekho ki 100% coverage aa rahi hai ya nahi:
 
-Bash
+```bash
 # 1. Simple test run
 pytest --verbose
 
@@ -387,10 +434,13 @@ pytest --cov=src --verbose
 
 # 3. Missing lines dekhne ke liye (agar 100% na ho)
 pytest --cov=src --cov-report=term-missing
-Step 4: Workflows Add / Update Karo (CI/CD)
+```
+
+### Step 4: Workflows Add / Update Karo (CI/CD)
+
 Jab tests pass ho jayein, to dono workflow files create ya check karke push karo:
 
-Bash
+```bash
 # Status check karo
 git status
 
@@ -402,147 +452,61 @@ git commit -m "add unit tests and workflows"
 
 # Remote GitHub par push karo (Actions trigger karne ke liye)
 git push origin main
-Step 5: Agar Bot Trigger Na Ho Toh (Empty Commit)
+```
+
+### Step 5: Agar Bot Trigger Na Ho Toh (Empty Commit)
+
 Agar GitHub Actions bot skip ho jaye ya trigger na kare, to ek empty commit push karke bot ko jaga do:
 
-Bash
+```bash
 git commit --allow-empty -m "trigger step 0"
 git push origin main
+```
+
 Bas itna hi exact flow hai jo humne abhi practical karte waqt terminal par use kiya tha!
 
+---
 
+## 🟢 GitHub Actions — Result Check
 
+### Step 1: Repository ka "Actions" Tab Kholo
 
+1. Apne browser mein apni GitHub repository ka page kholo.
+2. Sabse upar top bar par menu hota hai:
+   **Code | Issues | Pull requests | Actions | Projects | Settings**
+3. Seedha **Actions** tab par click karo.
 
+### Step 2: Running Workflow Status Dekho
 
+Page refresh (`F5` ya `Ctrl + R`) karo. "All workflows" wali list mein sabse upar aapka latest commit dikhega:
 
+| Status | Matlab |
+|--------|--------|
+| 🟡 **Yellow Spinning Circle** | GitHub ke server par tests abhi chal rahe hain. Kuchh mat dabao, bas 15–30 second wait karo aur page refresh karte raho. |
+| 🟢 **Green Checkmark (✅)** | **Success!** Saare unit tests pass ho gaye aur CI/CD pipeline pass ho chuki hai. Exam ke hisaab se aapka kaam complete hai. |
+| 🔴 **Red Cross (❌)** | Koi test fail ho gaya ya code mein koi syntax/coverage error aa gaya. |
 
+### Step 3: Agar Red Cross (Fail) Aaye Toh Error Kaise Dekhein?
 
-
-
-
-
-
-
-Step 1: Repository ka "Actions" Tab Kholo
-Apne browser mein apni GitHub repository ka page kholo.
-
-Sabse upar top bar par menu hota hai:
-Code | Issues | Pull requests | Actions | Projects | Settings
-
-Seedha Actions tab par click karo.
-
-Step 2: Running Workflow Status Dekho
-Page refresh (F5 ya Ctrl + R) karo. "All workflows" wali list mein sabse upar aapka latest commit dikhega:
-
-🟡 Yellow Spinning Circle:
-
-Iska matlab GitHub ke server par tests abhi chal rahe hain.
-
-Kuchh mat dabao, bas 15–30 second wait karo aur page refresh karte raho.
-
-🟢 Green Checkmark (✅):
-
-Success! Saare unit tests pass ho gaye aur CI/CD pipeline pass ho chuki hai. Exam ke hisaab se aapka kaam complete hai.
-
-🔴 Red Cross (❌):
-
-Iska matlab koi test fail ho gaya ya code mein koi syntax/coverage error aa gaya.
-
-Step 3: Agar Red Cross (Fail) Aaye Toh Error Kaise Dekhein?
 Agar red mark aata hai, toh ghabrao mat:
 
-Us Red wale workflow run ke naam par click karo.
+1. Us Red wale workflow run ke naam par click karo.
+2. Left side mein job ka naam dikhega (jaise `build` ya `python-coverage`), uspe click karo.
+3. Wahan steps ki list khul jayegi:
+   - Jo step fail hua hoga (jaise `Test with pytest` ya `Fail if below threshold`), uske aage red cross hoga.
+   - Us failed step par click karke dropdown kholo.
+4. Terminal jaisa black console log khul jayega, jisme red color se saaf likha hoga ki kaunsa test **FAILED** hua ya coverage kitni percent aayi.
+5. Wahi line number ya function apne VS Code mein theek karo, wapas commit & push karo, aur dubara Actions tab mein aakar green check verify kar lo.
 
-Left side mein job ka naam dikhega (jaise build ya python-coverage), uspe click karo.
+---
 
-Wahan steps ki list khul jayegi:
+## 🌿 Branch + Pull Request Flow
 
-Jo step fail hua hoga (jaise Test with pytest ya Fail if below threshold), uske aage red cross hoga.
+### Step 1: Terminal se Nayi Branch Push Karo (Best Command)
 
-Us failed step par click karke dropdown kholo.
-
-Terminal jaisa black console log khul jayega, jisme red color se saaf likha hoga ki kaunsa test FAILED hua ya coverage kitni percent aayi.
-
-Wahi line number ya function apne VS Code mein theek karo, wapas commit & push karo, aur dubara Actions tab mein aakar green check verify kar lo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Step 1: Terminal se Nayi Branch Push Karo (Best Command)
 Ek hi line mein branch switch karke push karne ka sabse clean tareeqa:
 
-Bash
+```bash
 # Nayi branch banao aur turant uspe shift ho jao
 git checkout -b test-branch
 
@@ -552,34 +516,27 @@ git commit -m "add unit tests and coverage"
 
 # Push karo
 git push origin test-branch
-Step 2: GitHub Browser par Yellow Strip se 1-Click PR Banao
+```
+
+### Step 2: GitHub Browser par Yellow Strip se 1-Click PR Banao
+
 Yeh manual dropdown select karne se 10 guna fast hai:
 
-Apne browser mein repo ka page open karo aur refresh (F5) karo.
+1. Apne browser mein repo ka page open karo aur refresh (`F5`) karo.
+2. Sabse upar screen par ek **Yellow alert bar** dikhegi:
+   > `test-branch had recent pushes 1 minute ago`
+3. Uske theek aage bane green button **Compare & pull request** par click kar do.
+4. Naye page par bina koi title change kiye seedha neeche **Create pull request** green button daba do.
 
-Sabse upar screen par ek Yellow alert bar dikhegi:
+### Step 3: Result Check Karo (Usi Page Par)
 
-test-branch had recent pushes 1 minute ago
-
-Uske theek aage bane green button Compare & pull request par click kar do.
-
-Naye page par bina koi title change kiye seedha neeche Create pull request green button daba do.
-
-Step 3: Result Check Karo (Usi Page Par)
 PR create hote hi aapko Actions tab mein jaane ki bhi zaroorat nahi hai.
 
 Usi Pull Request ke page par thoda neeche scroll karo:
 
-Wahan checks ka box apne aap aa jata hai.
+- Wahan checks ka box apne aap aa jata hai.
+- Pehle 🟡 (running) dikhega.
+- 15–20 second mein **All checks have passed** ke sath 🟢 Green tick lag jayega.
+- Coverage report ka comment bhi Mona bot usi PR ke neeche automatically post kar degi.
 
-Pehle 🟡 (running) dikhega.
-
-15-20 second mein All checks have passed ke sath 🟢 Green tick lag jayega.
-
-Coverage report ka comment bhi Mona bot usi PR ke neeche automatically post kar degi.
-
-Agar exam mein PR required ho, toh yeh "Yellow Strip wala method" sabse best, fast aur zero-error tareeqa hai!
-
-
-
-
+> 💡 Agar exam mein PR required ho, toh yeh **"Yellow Strip wala method"** sabse best, fast aur zero-error tareeqa hai!
