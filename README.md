@@ -349,3 +349,85 @@ git push origin main
 ## If Push Rejected (Fix):
 git pull origin main --rebase
 git push origin main
+
+
+
+
+
+
+Step 1: Virtual Environment Setup
+Terminal mein jaakar venv banao aur activate karo:
+
+Bash
+# 1. Virtual environment create karo
+python -m venv .venv/calculations
+
+# 2. Activate karo (Codespaces ya Linux/Mac par)
+source .venv/calculations/bin/activate
+
+# (Agar Windows PowerShell par ho to ye chalana: .venv\calculations\Scripts\Activate.ps1)
+Step 2: Dependencies Install Karo
+Required packages aur coverage tools install karo:
+
+Bash
+# Repo ke requirements install karo
+pip install -r requirements.txt
+
+# Pytest aur coverage tools install karo
+pip install pytest coverage pytest-cov
+Step 3: Tests Run Karo aur Coverage Check Karo
+Unit tests run karke dekho ki 100% coverage aa rahi hai ya nahi:
+
+Bash
+# 1. Simple test run
+pytest --verbose
+
+# 2. Coverage check terminal par (100% check karne ke liye)
+pytest --cov=src --verbose
+
+# 3. Missing lines dekhne ke liye (agar 100% na ho)
+pytest --cov=src --cov-report=term-missing
+Step 4: Workflows Add / Update Karo (CI/CD)
+Jab tests pass ho jayein, to dono workflow files create ya check karke push karo:
+
+Bash
+# Status check karo
+git status
+
+# Changes stage karo
+git add .
+
+# Commit karo
+git commit -m "add unit tests and workflows"
+
+# Remote GitHub par push karo (Actions trigger karne ke liye)
+git push origin main
+Step 5: Agar Bot Trigger Na Ho Toh (Empty Commit)
+Agar GitHub Actions bot skip ho jaye ya trigger na kare, to ek empty commit push karke bot ko jaga do:
+
+Bash
+git commit --allow-empty -m "trigger step 0"
+git push origin main
+Bas itna hi exact flow hai jo humne abhi practical karte waqt terminal par use kiya tha!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
