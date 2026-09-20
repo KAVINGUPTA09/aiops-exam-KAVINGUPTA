@@ -540,3 +540,38 @@ Usi Pull Request ke page par thoda neeche scroll karo:
 - Coverage report ka comment bhi Mona bot usi PR ke neeche automatically post kar degi.
 
 > 💡 Agar exam mein PR required ho, toh yeh **"Yellow Strip wala method"** sabse best, fast aur zero-error tareeqa hai!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. PR ke liye Final Recap (Sirf 2 Min Ka Kaam)
+Terminal aur browser me bas ye steps karne hain:
+
+Terminal me commands chalao:
+
+Bash
+git checkout -b test-branch
+git add .
+git commit -m "completed tasks"
+git push origin test-branch
+GitHub browser par jao:
+
+Repo refresh karo.
+
+Upar aayi peeli (yellow) strip par Compare & pull request par click karo.
+
+Neeche Create pull request daba do.
+
+20 second me usi page par green check (All checks have passed) aa jayega. Bas done!
+
+
