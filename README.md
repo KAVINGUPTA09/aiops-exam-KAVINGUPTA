@@ -424,7 +424,47 @@ Bas itna hi exact flow hai jo humne abhi practical karte waqt terminal par use k
 
 
 
+Step 1: Repository ka "Actions" Tab Kholo
+Apne browser mein apni GitHub repository ka page kholo.
 
+Sabse upar top bar par menu hota hai:
+Code | Issues | Pull requests | Actions | Projects | Settings
+
+Seedha Actions tab par click karo.
+
+Step 2: Running Workflow Status Dekho
+Page refresh (F5 ya Ctrl + R) karo. "All workflows" wali list mein sabse upar aapka latest commit dikhega:
+
+🟡 Yellow Spinning Circle:
+
+Iska matlab GitHub ke server par tests abhi chal rahe hain.
+
+Kuchh mat dabao, bas 15–30 second wait karo aur page refresh karte raho.
+
+🟢 Green Checkmark (✅):
+
+Success! Saare unit tests pass ho gaye aur CI/CD pipeline pass ho chuki hai. Exam ke hisaab se aapka kaam complete hai.
+
+🔴 Red Cross (❌):
+
+Iska matlab koi test fail ho gaya ya code mein koi syntax/coverage error aa gaya.
+
+Step 3: Agar Red Cross (Fail) Aaye Toh Error Kaise Dekhein?
+Agar red mark aata hai, toh ghabrao mat:
+
+Us Red wale workflow run ke naam par click karo.
+
+Left side mein job ka naam dikhega (jaise build ya python-coverage), uspe click karo.
+
+Wahan steps ki list khul jayegi:
+
+Jo step fail hua hoga (jaise Test with pytest ya Fail if below threshold), uske aage red cross hoga.
+
+Us failed step par click karke dropdown kholo.
+
+Terminal jaisa black console log khul jayega, jisme red color se saaf likha hoga ki kaunsa test FAILED hua ya coverage kitni percent aayi.
+
+Wahi line number ya function apne VS Code mein theek karo, wapas commit & push karo, aur dubara Actions tab mein aakar green check verify kar lo.
 
 
 
