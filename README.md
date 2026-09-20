@@ -269,7 +269,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy psutil regex requ
 git pull origin main --rebase
 git push origin main
 
-
+git add .
 
 
 
